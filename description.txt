@@ -1,0 +1,10 @@
+#################################################################
+Title:  VCNet: Vector based gene Co-expression Network construction using 
+		Frobenius norm and its application to RNA-seq data
+Version: 1.0
+Author: Zengmiao Wang, Huaying Fang, Nelson Leung-Sang Tang and Minghua Deng
+Description: Construction of gene co-expression network for RNA-seq data.
+Maintainer: Zengmiao Wang (wangzengmiao@gmail.com)
+License: GNU LGPL-v3
+Date/Publication: 2016-08-16
+NeedsCompilation: No
