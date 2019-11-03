@@ -5,7 +5,7 @@
 # Email : wangzengmiao@gmail.com
 # Date  : 2016-08-16
 #---------------------------------------------------------------------------------------------------------------
-# Package required: CompQuadForm
+# Package required: CompQuadForm,survey
 # function: PerformVCNet
 # Input: 
 #	Datafile------the name of the data file with ".txt" extension.
