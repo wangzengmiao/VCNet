@@ -5,7 +5,8 @@
 # Contact: wangzengmiao@gmail.com-------
 #---------------------------------------
 # libraries to be loaded----------------
-library(CompQuadForm);  
+library(CompQuadForm);
+library(survey); 
 #--------useful function----------------
 abstract_exp = function(name1,name2,exp){
 	N = dim(exp)[2];
