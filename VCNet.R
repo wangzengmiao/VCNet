@@ -32,11 +32,19 @@ VCNet =	function(gene1,gene2){
 	TranC = 3;
 	TransCor = log((1+Cor*sqrt(TranC)/2)/(1-Cor*sqrt(TranC)/2))/sqrt(TranC);
 	TransFnorm = (N-2.5)*sum(TransCor^2);
-	results = davies(q=TransFnorm,lambda=Lamda);
-	p.value_TransFnorm = results$Qq;
-	
+	results = davies(q=TransFnorm,lambda=Lamda,lim=1000000,acc=1e-9);
+	if(results$ifault==0 | results$ifault==2){
+		if(results$Qq>=0){
+			p.value_TransFnorm = results$Qq;
+		}else{
+			p.value_TransFnorm = pchisqsum(x=TransFnorm, df=rep(1,length(Lamda)), a=Lamda, lower.tail = FALSE,method='saddlepoint');
+		}
+	}else{
+		p.value_TransFnorm = pchisqsum(x=TransFnorm, df=rep(1,length(Lamda)), a=Lamda, lower.tail = FALSE,method='saddlepoint');
+	}
 	return(data.frame(TransFnorm=TransFnorm,p.value_TransFnorm=p.value_TransFnorm));
 }
+
 
 #---------------------------------------
 
